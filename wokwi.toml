@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/rp2040-joystick-display-adc-pwm.uf2'
+elf = 'build/rp2040-joystick-display-adc-pwm.elf'
