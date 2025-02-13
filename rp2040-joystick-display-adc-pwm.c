@@ -47,9 +47,9 @@ void toggle_led_g(uint gpio, uint32_t events) {
 
     led_g_state = !led_g_state;
     if (led_g_state) {
-        pwm_set_gpio_level(LED_VERDE, 2048);  // LED verde ligado
+        pwm_set_gpio_level(LED_VERDE, 2048);
     } else {
-        pwm_set_gpio_level(LED_VERDE, 0);  // LED verde desligado
+        pwm_set_gpio_level(LED_VERDE, 0); 
     }
 
     border_style = (border_style + 1) % 2;
@@ -89,7 +89,8 @@ void gpio_callback(uint gpio, uint32_t events) {
     if (!debounce(gpio)) return;
 
     printf("Interrupção detectada no GPIO %d\n", gpio);
-
+    
+    // Verifica qual botão foi pressionado e chama a função correspondente
     if (gpio == BUTTON_JOY) {
         printf("Chamando toggle_led_g()\n");
         toggle_led_g(gpio, events);
@@ -107,9 +108,9 @@ void setup() {
     setup_pwm(LED_VERDE);
     setup_pwm(LED_VERMELHO);
 
-    adc_init();
-    adc_gpio_init(JOYSTICK_X);
-    adc_gpio_init(JOYSTICK_Y);
+    adc_init(); // Inicializa o conversor A/D (ADC) do RP2040
+    adc_gpio_init(JOYSTICK_X); // Configura o pino X do joystick como entrada analógica 
+    adc_gpio_init(JOYSTICK_Y); // Configura o pino Y do joystick como entrada analógica
 
     // Configuração dos botões
     gpio_init(BUTTON_JOY);
@@ -145,7 +146,6 @@ void draw_border() {
             ssd1306_rect(&display, 0, 0, 127, 63, true, false);
             break;
         case 1:
-            // Borda mais grossa
             ssd1306_rect(&display, 0, 0, 127, 63, true, false);
             ssd1306_rect(&display, 2, 2, 123, 59, true, false);
             break;
@@ -166,7 +166,6 @@ void loop() {
 
     ssd1306_fill(&display, false);
 
-    // Desenha a borda conforme o estilo atual
     draw_border();
 
     // Desenha o cursor do joystick

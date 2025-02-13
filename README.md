@@ -43,10 +43,10 @@ Ele foi desenvolvido para a placa **BitDogLab** com o microcontrolador **RP2040*
 
 ## 🎥 Demonstração
 📌 Assista ao vídeo de demonstração do projeto no link:  
-[🎬 YouTube ou Google Drive - Adicionar Link Aqui]
+[🎬 Google Drive - [Adicionar Link Aqui](https://drive.google.com/file/d/1uBfmNY8swe8t0qo1fZozgNtTrl2L5VPO/view?usp=sharing)]
 
 ## 👨‍💻 Autor
-- **Thiago De Andrade Barros Machado** - [[Seu LinkedIn ou GitHub](https://github.com/ThiagoMachado2)]
+- **Thiago De Andrade Barros Machado** - [[GitHub](https://github.com/ThiagoMachado2)]
 
 
 ---
